@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 main() => runApp(PerguntaApp());
 
+class _PerguntaAppState extends State<PerguntaApp> {
+  var _perguntaSelecionada = 0;
 
-class PerguntaApp extends StatelessWidget{
+  void _responder() {
+    setState(() {
+      _perguntaSelecionada++;
+    });
+    print(_perguntaSelecionada);
+  }
 
-  void responder() {
-    print('Pergunta respondida!');
-  }
-  
-  void Function() responder2() {
-    return () => print('Pergunta respondida #2!');
-  }
   @override
   Widget build(BuildContext context) {
-    final List<String> perguntas = [
+    final perguntas = [
       'Qual é a sua cor favorita?',
       'Qual é o seu animal favorito?'
     ];
@@ -22,28 +22,33 @@ class PerguntaApp extends StatelessWidget{
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Perguntas'),
+          title: const Text('Perguntas'),
         ),
-        body: Column( 
+        body: Column(
           children: <Widget>[
-            Text(perguntas[0]),
-            RaisedButton(
+            Text(perguntas[_perguntaSelecionada]),
+            ElevatedButton(
               child: Text('Resposta 1'),
-              onPressed: responder,
+              onPressed: _responder,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Resposta 2'),
-              onPressed: responder,
+              onPressed: _responder,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Resposta 3'),
-              onPressed: responder2(),
+              onPressed: _responder,
             ),
           ],
         ),
       ),
     );
   }
+}
+
+class PerguntaApp extends StatefulWidget{
   
-  RaisedButton({required Text child, required void Function() onPressed}) {}
+    _PerguntaAppState createState(){
+      return _PerguntaAppState();
+    }
 }
