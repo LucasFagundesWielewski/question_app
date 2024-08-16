@@ -1,16 +1,27 @@
-# projeto_perguntas
+# PerguntaApp
 
-A new Flutter project.
+O **PerguntaApp** é um aplicativo Flutter simples que apresenta um questionário ao usuário, coleta suas respostas e exibe um resultado baseado nas pontuações acumuladas. É um exemplo clássico de aplicação de perguntas e respostas, ideal para aprender sobre o desenvolvimento de interfaces no Flutter.
 
-## Getting Started
+## Estrutura do Projeto
 
-This project is a starting point for a Flutter application.
+O projeto é composto por várias classes Flutter:
 
-A few resources to get you started if this is your first Flutter project:
+- **PerguntaApp**: O widget principal que gerencia o estado do questionário e a pontuação total do usuário.
+- **Questionario**: Exibe as perguntas e respostas para o usuário.
+- **Questao**: Mostra a pergunta atual.
+- **Resposta**: Cria botões de resposta que o usuário pode selecionar.
+- **Resultado**: Exibe a pontuação final e uma mensagem de resultado.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Funcionalidades
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Exibição de perguntas e opções de resposta.
+- Acumulação de pontuações com base nas respostas selecionadas.
+- Exibição de uma mensagem de resultado baseada na pontuação total.
+- Opção para reiniciar o questionário.
+
+## Como Executar o Projeto
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/LucasFagundesWielewski/question_app.git
